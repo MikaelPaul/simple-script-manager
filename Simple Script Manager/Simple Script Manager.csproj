@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Simple_Script_Manager</RootNamespace>
+    <RootNamespace>SSM</RootNamespace>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Simple_Script_Manager
+namespace SSM
 {
 	/// <summary>
 	/// Interaction logic for App.xaml
