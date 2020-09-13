@@ -1,0 +1,38 @@
+﻿[
+  {
+    "GroupName": "Add Member Example",
+    "Tags": [
+      { "TagName": "Add" },
+      { "TagName": "Member" }
+    ],
+    "Files": [
+      {
+        "FileName": "Add Member - Member Access.sql",
+        "FilePath": "N:\\CommonSQL\\Add"
+
+      },
+      {
+        "FileName": "Add Member - Plan Admin.sql",
+        "FilePath": "N:\\CommonSQL\\Add"
+      }
+    ]
+  },
+  {
+    "GroupName": "Delete Member Example",
+    "Tags": [
+      { "TagName": "Delete" },
+      { "TagName": "Member" }
+    ],
+    "Files": [
+      {
+        "FileName": "Delete Member - Member Access.sql",
+        "FilePath": "N:\\CommonSQL\\Delete"
+
+      },
+      {
+        "FileName": "Delete Member - Plan Admin.sql",
+        "FilePath": "N:\\CommonSQL\\Delete"
+      }
+    ]
+  }
+]

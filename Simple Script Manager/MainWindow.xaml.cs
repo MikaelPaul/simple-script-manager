@@ -37,60 +37,36 @@ Identify all files with associated keywords (File System) (Future version)
 
  */
 
-namespace SSM
+namespace SSM.ViewModel
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public User user;
-
-		private readonly ResultViewModel ViewModel;
-		//private List<ResultView> results = new List<ResultView>();
+		private readonly MainWindowViewModel MainWindowViewModel;
 
 		public MainWindow()
 		{
 			InitializeComponent();
 
-			user = new User("Mikael");
-
-			// Data-bind to ViewModel
-			ViewModel = new ResultViewModel();
-			this.DataContext = this;
-
-			/*AddResult();
-			AddResult();
-			AddResult();
-			AddResult();*/
+			// Initialize and data-bind to ViewModel
+			MainWindowViewModel = new MainWindowViewModel();
+			this.DataContext = MainWindowViewModel;
 		}
 
-		private void Search_KeyUp(object sender, KeyEventArgs e)
+		private async void Search_KeyUp(object sender, KeyEventArgs e)
 		{
-			//ViewModel.SearchQuery = SearchBar.Text;
+			MainWindowViewModel.SearchQuery = SearchBar.Text;
+			await MainWindowViewModel.Search();
 
 			/*Regex acceptedKeys = new Regex(@"^[a-zA-Z0-9-_/. ]$");
-			
 			DebugLabel.Content = "";
 			if (acceptedKeys.IsMatch(e.Key.ToString()))
 				DebugLabel.Content = SearchBar.Text + e.Key.ToString();*/
 
-		}
 
-		/*private void AddResult()
-		{
-			ResultPanel.Children.Add(new ResultView() { GroupName = "This is a result" });
-			ResultPanel.Children.Add(new Separator() { Height = 1, Margin = new Thickness(10, 0, 10, 0) });
-		}*/
 
-		public class User
-		{
-			public string Name;
-
-			public User(string name)
-			{
-				Name = name;
-			}
 		}
 	}
 }

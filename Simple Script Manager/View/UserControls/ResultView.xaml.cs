@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SSM.Model;
+using SSM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -12,24 +14,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SSM
+namespace SSM.View.UserControls
 {
-	/// <summary>
-	/// Interaction logic for ResultView.xaml
-	/// </summary>
 	public partial class ResultView : UserControl
 	{
-		public string GroupName { 
-			get { return GroupNameLabel.Content.ToString(); } 
-			set { GroupNameLabel.Content = value; } 
-		}
-
+		//private readonly AddEditGroupViewModel AddEditGroupViewModel;
 
 		public ResultView()
 		{
 			InitializeComponent();
+			Console.WriteLine($"DataContext of ResultView is {DataContext}");
+			// Initialize and data-bind to ViewModel
+			//AddEditGroupViewModel = new AddEditGroupViewModel();
+			//this.DataContext = AddEditGroupViewModel;
 		}
 
-		
 	}
 }

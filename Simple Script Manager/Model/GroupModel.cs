@@ -4,15 +4,19 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 
-namespace SSM
+namespace SSM.Model
 {
-	public class GroupModel
+	public class GroupModel : IComparable
 	{
 		public string GroupName { get; set; }
 
-		public ObservableCollection<TagModel> Tags = new ObservableCollection<TagModel>();
+		public List<TagModel> Tags { get; set; } = new List<TagModel>();
 
-		//ICommand AddTag;
-		//ICommand RemoveTag;
+		public List<FileModel> Files { get; set; } = new List<FileModel>();
+
+		public int CompareTo(object o) => string.Compare(this.GroupName, ((GroupModel)o).GroupName, true);
+
+		//ICommand AddGroup;
+		//ICommand RemoveGroup;
 	}
 }
