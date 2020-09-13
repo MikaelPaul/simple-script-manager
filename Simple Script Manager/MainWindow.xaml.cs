@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SSM.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,19 +40,19 @@ Identify all files with associated keywords (File System) (Future version)
 
 namespace SSM.ViewModel
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
+
 	public partial class MainWindow : Window
 	{
+		private IGroupsRepository groupsRepository;
 		private readonly MainWindowViewModel MainWindowViewModel;
 
-		public MainWindow()
+		public MainWindow(IGroupsRepository groups)
 		{
+			this.groupsRepository = groups;
 			InitializeComponent();
 
 			// Initialize and data-bind to ViewModel
-			MainWindowViewModel = new MainWindowViewModel();
+			MainWindowViewModel = new MainWindowViewModel(groups);
 			this.DataContext = MainWindowViewModel;
 		}
 
@@ -59,14 +60,7 @@ namespace SSM.ViewModel
 		{
 			MainWindowViewModel.SearchQuery = SearchBar.Text;
 			await MainWindowViewModel.Search();
-
-			/*Regex acceptedKeys = new Regex(@"^[a-zA-Z0-9-_/. ]$");
-			DebugLabel.Content = "";
-			if (acceptedKeys.IsMatch(e.Key.ToString()))
-				DebugLabel.Content = SearchBar.Text + e.Key.ToString();*/
-
-
-
 		}
+
 	}
 }
